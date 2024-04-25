@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "sourceMap": true,
+    "jsx": "react",
+    "target": "ESNext",
+    "allowJs": true,
+    "esModuleInterop": true
+  }
+}
