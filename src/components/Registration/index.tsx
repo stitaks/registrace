@@ -1,15 +1,15 @@
 import { useState } from "react";
 
-interface User {
-    username:string,
-    email:string,
-    password:string,
-    passwordConfirm:string,
-}
-
 
 
 export const Registration = (() => {
+    const [user, setUser] = useState({
+        username: '',
+        email: '',
+        password: '',
+        passwordConfirm: '',
+    })
+
     return (
         <>
         <p>Registration</p>
@@ -33,7 +33,7 @@ export const Registration = (() => {
             <p>Pasword Confirm</p>
             <input name="passwordConfirm" />
         </label>
-        <button type="submit">Submit</button>
+        <button type="submit">Register</button>
       </form>
       </>
     )
