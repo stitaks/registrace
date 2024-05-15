@@ -10,30 +10,33 @@ export const Registration = (() => {
         passwordConfirm: '',
     })
 
+    if(user.username==='' && user.email.indexOf("@")!=-1)
+        {setUser({...user, username: user.email.substring(0, user.email.indexOf("@"))})}
+
     return (
         <>
         <p>Registration</p>
         <form onSubmit={() => {}}>
         <label>
             <p>Email:</p>
-          <input name="email" />
+          <input type="text" onChange={(e) => setUser({...user, email: e.target.value})} />
         </label>
         <p> </p>
         <label>
             <p>User Name</p>
-            <input name="username" />
+            <input type="text" value={user.username}  onChange={(e) => setUser({...user, username: e.target.value})} />
         </label>
         <p> </p>
         <label>
             <p>Pasword</p>
-            <input name="password" />
+            <input type="text" onChange={(e) => setUser({...user, password: e.target.value})} />
         </label>
         <p> </p>
         <label>
             <p>Pasword Confirm</p>
-            <input name="passwordConfirm" />
+            <input type="text" onChange={(e) => setUser({...user, passwordConfirm: e.target.value})} />
         </label>
-        <button type="submit">Register</button>
+        <button type="button" onClick={() => {console.log(user)}}>Register</button>
       </form>
       </>
     )
